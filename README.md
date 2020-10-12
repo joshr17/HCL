@@ -41,6 +41,4 @@ For any questions, please contact Josh Robinson (joshrob@mit.edu).
 
 ## Acknowledgements
 
-Part of this code is inspired by [leftthomas/SimCLR](https://github.com/leftthomas/SimCLR), by [chingyaoc/DCL](https://github.com/chingyaoc/DCL), and by [fanyun-sun
-/
-InfoGraph](https://github.com/fanyun-sun/InfoGraph).
+Part of this code is inspired by [leftthomas/SimCLR](https://github.com/leftthomas/SimCLR), by [chingyaoc/DCL](https://github.com/chingyaoc/DCL), and by [fanyun-sun/InfoGraph](https://github.com/fanyun-sun/InfoGraph).
