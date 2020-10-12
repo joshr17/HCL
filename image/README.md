@@ -27,6 +27,11 @@ path flags:
 python linear.py --model_path results/model_400.pth
 ```
 
+An example of both training an embedding and evaluating can be run using:
+```
+bash launch.sh
+```
+
 #### Pretrained Models
 |          | beta | tau_plus | Arch | Latent Dim | Batch Size  | Accuracy(%) | Download |
 |----------|:---:|:---:|:----:|:---:|:---:|:---:|:---:|
