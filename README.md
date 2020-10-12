@@ -16,7 +16,7 @@ modalities, requires only few additional lines of code to implement, and introdu
 computational overhead.
 
 
-**Contrastive Learning with Hard Negatives Samples** [[paper]](https://arxiv.org/abs/2007.00224)
+**Contrastive Learning with Hard Negatives Samples** [[paper]](https://arxiv.org/pdf/2010.04592)
 <br/>
 [Joshua Robinson](https://joshrobinson.mit.edu/), 
 [Ching-Yao Chuang](https://chingyaoc.github.io/), 
@@ -41,4 +41,6 @@ For any questions, please contact Josh Robinson (joshrob@mit.edu).
 
 ## Acknowledgements
 
-Part of this code is inspired by [leftthomas/SimCLR](https://github.com/leftthomas/SimCLR) and [chingyaoc/DCL](https://github.com/chingyaoc/DCL).
+Part of this code is inspired by [leftthomas/SimCLR](https://github.com/leftthomas/SimCLR), by [chingyaoc/DCL](https://github.com/chingyaoc/DCL), and by [fanyun-sun
+/
+InfoGraph](https://github.com/fanyun-sun/InfoGraph).
