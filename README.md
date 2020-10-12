@@ -35,13 +35,13 @@ computational overhead.
 We can train standard (biased) or debiased version (M=1) of [SimCLR](https://arxiv.org/abs/2002.05709) with `main.py` on STL10 dataset.
 
 flags:
-  - `--debiased`: use debiased objective (True) or standard objective (False)
+  - `--beta`: specify hardness (bigger is harder)
   - `--tau_plus`: specify class probability
   - `--batch_size`: batch size for SimCLR
 
-For instance, run the following command to train a debiased encoder.
+For instance, run the following command to train an embedding with hard negatives.
 ```
-python main.py --tau_plus = 0.1
+python main.py --tau_plus = 0.1 --beta 1.0
 ```
 
 ## Linear evaluation
