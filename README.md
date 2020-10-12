@@ -1,7 +1,7 @@
 # Contrastive Learning with Hard Negatives Samples
 
 <p align='center'>
-<img src='https://github.com/joshr17/HCL/figs/hard_sampling_schema.pdf?raw=true' width='500'/>
+<img src='https://github.com/joshr17/HCL/figs/hard_sampling_schema.pdf' width='500'/>
 </p>
 
 We consider the question: how can you sample good negative examples for contrastive
