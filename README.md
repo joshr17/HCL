@@ -1,8 +1,4 @@
 # Contrastive Learning with Hard Negatives Samples
-Method for sampling hard negatives for contrastive learning
-
-
-# Debiased Contrastive Learning
 
 <p align='center'>
 <img src='https://github.com/chingyaoc/DCL/blob/master/misc/fig1.png?raw=true' width='500'/>
@@ -22,10 +18,9 @@ computational overhead.
 
 **Debiased Contrastive Learning** [[paper]](https://arxiv.org/abs/2007.00224)
 <br/>
-[Ching-Yao Chuang](https://chingyaoc.github.io/), 
 [Joshua Robinson](https://joshrobinson.mit.edu/), 
-[Lin Yen-Chen](https://yenchenlin.me/),
-[Antonio Torralba](http://web.mit.edu/torralba/www/), and
+[Ching-Yao Chuang](https://chingyaoc.github.io/), 
+[Suvrit Sra](http://web.mit.edu/torralba/www/), and
 [Stefanie Jegelka](https://people.csail.mit.edu/stefje/)
 <br/>
 
@@ -71,14 +66,14 @@ If you find this repo useful for your research, please consider citing the paper
 
 ```
 @article{chuang2020debiased,
-  title={Debiased Contrastive Learning},
-  author={Chuang, Ching-Yao and Robinson, Joshua and Yen-Chen, Lin and Torralba, Antonio and Jegelka, Stefanie},
-  journal={arXiv preprint arXiv:2007.00224},
+  title={Contrastive Learning with Hard Negatives Samples},
+  author={Robinson, Joshua and Chuang, Ching-Yao, and Sra, Suvrit and Jegelka, Stefanie},
+  journal={arXiv:2010.04592},
   year={2020}
 }
 ```
-For any questions, please contact Ching-Yao Chuang (cychuang@mit.edu).
+For any questions, please contact Josh Robinson (joshrob@mit.edu).
 
 ## Acknowledgements
 
-Part of this code is inspired by [leftthomas/SimCLR](https://github.com/leftthomas/SimCLR).
+Part of this code is inspired by [leftthomas/SimCLR](https://github.com/leftthomas/SimCLR) and [chingyaoc/DCL](https://github.com/chingyaoc/DCL).
