@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# "ENZYMES" "AIDS"
+DATASET_NAMES=("MUTAG" "PTC_MR")
+#("MUTAG" "PTC_MR" "ENZYMES" "IMDB-BINARY" "IMDB-MULTI" "DD")
+	#"MUTAG" "PTC_MR" "ENZYMES" "AIDS")
+#"IMDB-MULTI" "IMDB-BINARY")
+#("ENZYMES") #"IMDB-BINARY" "IMDB-MULTI" "REDDIT-BINARY" "MCF-7")
+
+for DATASET_NAME in "${DATASET_NAMES[@]}"; do  
+	CUDA_VISIBLE_DEVICES=1, python deepinfomax.py --DS "$DATASET_NAME" --lr 0.001 --num-gc-layers 3 --repeats 10
+done
