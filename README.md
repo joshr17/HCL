@@ -1,4 +1,4 @@
-# Contrastive Learning with Hard Negatives Samples
+# Contrastive Learning with Hard Negative Samples
 
 <p align='center'>
 <img src='https://github.com/joshr17/HCL/blob/main/figs/hard_sampling_schema.png?raw=true' width='800'/>
