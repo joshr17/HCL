@@ -16,7 +16,7 @@ modalities, requires only few additional lines of code to implement, and introdu
 computational overhead.
 
 
-**Contrastive Learning with Hard Negatives Samples** [[paper]](https://arxiv.org/pdf/2010.04592)
+**Contrastive Learning with Hard Negative Samples** [[paper]](https://arxiv.org/pdf/2010.04592)
 <br/>
 [Joshua Robinson](https://joshrobinson.mit.edu/), 
 [Ching-Yao Chuang](https://chingyaoc.github.io/), 
@@ -31,7 +31,7 @@ If you find this repo useful for your research, please consider citing the paper
 
 ```
 @article{robinson2020hard,
-  title={Contrastive Learning with Hard Negatives Samples},
+  title={Contrastive Learning with Hard Negative Samples},
   author={Robinson, Joshua and Chuang, Ching-Yao, and Sra, Suvrit and Jegelka, Stefanie},
   journal={arXiv:2010.04592},
   year={2020}
