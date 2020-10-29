@@ -86,7 +86,7 @@ def get_negative_expectation(q_samples, measure, average=True, beta=0, tau_plus=
 
             Eq = (reweight * Eq)
             Eq=Eq/(1-tau_plus) 
-            Eq-=log_
+            Eq-=log_2
     elif measure == 'X2':
         Eq = -0.5 * ((torch.sqrt(q_samples ** 2) + 1.) ** 2)
     elif measure == 'KL':
