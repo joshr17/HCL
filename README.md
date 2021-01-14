@@ -20,7 +20,7 @@ computational overhead.
 <br/>
 [Joshua Robinson](https://joshrobinson.mit.edu/), 
 [Ching-Yao Chuang](https://chingyaoc.github.io/), 
-[Suvrit Sra](http://web.mit.edu/torralba/www/), and
+[Suvrit Sra](http://optml.mit.edu/), and
 [Stefanie Jegelka](https://people.csail.mit.edu/stefje/)
 <br/>
 
