@@ -33,8 +33,8 @@ If you find this repo useful for your research, please consider citing the paper
 @article{robinson2020hard,
   title={Contrastive Learning with Hard Negative Samples},
   author={Robinson, Joshua and Chuang, Ching-Yao, and Sra, Suvrit and Jegelka, Stefanie},
-  journal={arXiv:2010.04592},
-  year={2020}
+  journal={International Conference on Learning Representations},
+  year={2021}
 }
 ```
 For any questions, please contact Josh Robinson (joshrob@mit.edu).
