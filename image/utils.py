@@ -7,9 +7,6 @@ from random import sample
 import cv2
 import numpy as np
 
-#np.random.seed(0)
-
-
 class CIFAR10Pair(CIFAR10):
     def __getitem__(self, index):
         img, target = self.data[index], self.targets[index]
@@ -113,59 +110,41 @@ test_transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize([0.4914, 0.4822, 0.4465], [0.2023, 0.1994, 0.2010])])
 
-def get_dataset(dataset_name, pair=True):
-
+def get_dataset(dataset_name, root='../data', pair=True):
     if pair:
         if dataset_name=='cifar10':
-            train_data = CIFAR10Pair(root='../data', train=True, transform=train_transform)
-            memory_data = CIFAR10Pair(root='../data', train=True, transform=test_transform)
-            test_data = CIFAR10Pair(root='../data', train=False, transform=test_transform)
+            train_data = CIFAR10Pair(root=root, train=True, transform=train_transform)
+            memory_data = CIFAR10Pair(root=root, train=True, transform=test_transform)
+            test_data = CIFAR10Pair(root=root, train=False, transform=test_transform)
         elif dataset_name=='cifar100':
-            train_data = CIFAR100Pair(root='../data', train=True, transform=train_transform)
-            memory_data = CIFAR100Pair(root='../data', train=True, transform=test_transform)
-            test_data = CIFAR100Pair(root='../data', train=False, transform=test_transform)
+            train_data = CIFAR100Pair(root=root, train=True, transform=train_transform)
+            memory_data = CIFAR100Pair(root=root, train=True, transform=test_transform)
+            test_data = CIFAR100Pair(root=root, train=False, transform=test_transform)
         elif dataset_name=='stl10':
-            train_data = STL10Pair(root='../data', split='train+unlabeled', transform=train_transform)
-            memory_data = STL10Pair(root='../data', split='train', transform=test_transform)
-            test_data = STL10Pair(root='../data', split='test', transform=test_transform)
+            train_data = STL10Pair(root=root, split='train+unlabeled', transform=train_transform)
+            memory_data = STL10Pair(root=root, split='train', transform=test_transform)
+            test_data = STL10Pair(root=root, split='test', transform=test_transform)
         elif dataset_name=='cifar100_true_label':
-            train_data = CIFAR100Pair_true_label(root='../data', train=True, transform=train_transform)
-            memory_data = CIFAR100Pair_true_label(root='../data', train=True, transform=test_transform)
-            test_data = CIFAR100Pair_true_label(root='../data', train=False, transform=test_transform)
+            train_data = CIFAR100Pair_true_label(root=root, train=True, transform=train_transform)
+            memory_data = CIFAR100Pair_true_label(root=root, train=True, transform=test_transform)
+            test_data = CIFAR100Pair_true_label(root=root, train=False, transform=test_transform)
         else:
             raise Exception('Invalid dataset name')
     else:
-        try:
-            if dataset_name in ['cifar10', 'cifar10_true_label']:
-                train_data = CIFAR10(root='../data', train=True, transform=train_transform)
-                memory_data = CIFAR10(root='../data', train=True, transform=test_transform)
-                test_data = CIFAR10(root='../data', train=False, transform=test_transform)
-            elif dataset_name in ['cifar100', 'cifar100_true_label']:
-                train_data = CIFAR100(root='../data', train=True, transform=train_transform)
-                memory_data = CIFAR100(root='../data', train=True, transform=test_transform)
-                test_data = CIFAR100(root='../data', train=False, transform=test_transform)
-            elif dataset_name=='stl10':
-                train_data = STL10(root='../data', split='train+unlabeled', transform=train_transform)
-                memory_data = STL10(root='../data', split='train', transform=test_transform)
-                test_data = STL10(root='../data', split='test', transform=test_transform)
-            else:
-                raise Exception('Invalid dataset name')
-        except:
-            if dataset_name=='cifar10':
-                train_data = CIFAR10(root='data', train=True, transform=train_transform)
-                memory_data = CIFAR10(root='data', train=True, transform=test_transform)
-                test_data = CIFAR10(root='data', train=False, transform=test_transform)
-            elif dataset_name in ['cifar100', 'cifar100_true_label']:
-                train_data = CIFAR100(root='data', train=True, transform=train_transform)
-                memory_data = CIFAR100(root='data', train=True, transform=test_transform)
-                test_data = CIFAR100(root='data', train=False, transform=test_transform)
-            elif dataset_name=='stl10':
-                train_data = STL10(root='data', split='train+unlabeled', transform=train_transform)
-                memory_data = STL10(root='data', split='train', transform=test_transform)
-                test_data = STL10(root='data', split='test', transform=test_transform)
-            else:
-                raise Exception('Invalid dataset name')
-
+        if dataset_name in ['cifar10', 'cifar10_true_label']:
+            train_data = CIFAR10(root=root, train=True, transform=train_transform)
+            memory_data = CIFAR10(root=root, train=True, transform=test_transform)
+            test_data = CIFAR10(root=root, train=False, transform=test_transform)
+        elif dataset_name in ['cifar100', 'cifar100_true_label']:
+            train_data = CIFAR100(root=root, train=True, transform=train_transform)
+            memory_data = CIFAR100(root=root, train=True, transform=test_transform)
+            test_data = CIFAR100(root=root, train=False, transform=test_transform)
+        elif dataset_name=='stl10':
+            train_data = STL10(root=root, split='train', transform=train_transform)
+            memory_data = STL10(root=root, split='train', transform=test_transform)
+            test_data = STL10(root=root, split='test', transform=test_transform)
+        else:
+            raise Exception('Invalid dataset name')
 
     return train_data, memory_data, test_data
         

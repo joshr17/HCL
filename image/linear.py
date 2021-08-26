@@ -66,6 +66,7 @@ def train_val(net, data_loader, train_optimizer):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Linear Evaluation')
+    parser.add_argument('--root', type=str, default='../data', help='Path to data directory')
     parser.add_argument('--model_path', type=str, default='results/cifar10/cifar10_importance_model_128_400.pth',
                         help='The pretrained model path')
     parser.add_argument('--batch_size', type=int, default=512, help='Number of images in each mini-batch')
@@ -76,7 +77,7 @@ if __name__ == '__main__':
     model_path, batch_size, epochs = args.model_path, args.batch_size, args.epochs
     dataset_name = args.dataset_name
     
-    train_data, _, test_data = utils.get_dataset(dataset_name, pair=False)
+    train_data, _, test_data = utils.get_dataset(dataset_name, root=args.root, pair=False)
 
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=8, pin_memory=True)
     test_loader = DataLoader(test_data, batch_size=batch_size, shuffle=False, num_workers=8, pin_memory=True)
@@ -96,8 +97,7 @@ if __name__ == '__main__':
         if epoch % 5 == 0:
             test_loss, test_acc_1, test_acc_5 = train_val(model, test_loader, None)
 
-            if not os.path.exists('../results/'):
-                os.mkdir('../results/')
+            os.makedirs('../results/')
             try:
                 results=pickle.load( open( '../results/summary.pkl', "rb" ))
             except:

@@ -127,6 +127,7 @@ def test(net, memory_data_loader, test_data_loader):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Train SimCLR')
+    parser.add_argument('--root', type=str, default='../data', help='Path to data directory')
     parser.add_argument('--feature_dim', default=128, type=int, help='Feature dim for latent vector')
     parser.add_argument('--temperature', default=0.5, type=float, help='Temperature used in softmax')
     parser.add_argument('--tau_plus', default=0.1, type=float, help='Positive class priorx')
@@ -155,7 +156,7 @@ if __name__ == '__main__':
         do_beta_anneal=False
     
     # data prepare
-    train_data, memory_data, test_data = utils.get_dataset(dataset_name)
+    train_data, memory_data, test_data = utils.get_dataset(dataset_name, root=args.root)
 
     train_loader = DataLoader(train_data, batch_size=batch_size, shuffle=True, num_workers=12, pin_memory=True, drop_last=True)
     memory_loader = DataLoader(memory_data, batch_size=batch_size, shuffle=False, num_workers=12, pin_memory=True)
@@ -170,10 +171,8 @@ if __name__ == '__main__':
     print('# Classes: {}'.format(c))
 
     # training loop
-    if not os.path.exists('../results'):
-        os.mkdir('../results')
-    if not os.path.exists('../results/{}'.format(dataset_name)):
-        os.mkdir('../results/{}'.format(dataset_name))
+    os.makedirs('../results/{}'.format(dataset_name))
+
     for epoch in range(1, epochs + 1):
         train_loss = train(model, train_loader, optimizer, temperature, estimator, tau_plus, beta)
         
